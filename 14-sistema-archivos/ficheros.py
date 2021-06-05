@@ -1,3 +1,5 @@
+import os.path
+import os
 from io import open
 import pathlib
 import shutil
@@ -51,3 +53,27 @@ ruta_alternativa = str(pathlib.Path().absolute()) + \
 shutil.copyfile(ruta_original, ruta_nueva)
 
 # mover
+ruta_original = str(pathlib.Path().absolute()) + "/fichero_copiado.txt"
+ruta_nueva = str(pathlib.Path().absolute()) + "/fichero_copiado_nuevo.txt"
+
+shutil.move(ruta_original, ruta_nueva)
+
+# eliminar
+
+ruta_nueva = str(pathlib.Path().absolute()) + "/fichero_copiado_nuevo.txt"
+
+os.remove(ruta_nueva)
+
+# comprobar si existe
+
+print(os.path.abspath("./"))
+
+ruta_comprobar = os.path.abspath("./") + "/fichero_texto.txt"
+ruta_comprobar = "./fichero_texto.txt"
+
+print(ruta_comprobar)
+
+if os.path.isfile(ruta_comprobar):
+    print("El archivo existe")
+else:
+    print("El archivo no existe")
