@@ -56,3 +56,5 @@ coche.acelerar()
 coche.frenar()
 
 print("Velocidad nueva: ", coche.getVelocidad())
+
+print("Velocidad nueva: ", coche.getVelocidad())
